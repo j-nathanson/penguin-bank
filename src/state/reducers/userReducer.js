@@ -6,5 +6,5 @@ const userReducer = (state = [], action) => {
             return state;
     }
 }
-
+const test = "";
 export default userReducer;
