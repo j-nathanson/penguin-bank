@@ -13,9 +13,9 @@ function App() {
   const dispatch = useDispatch();
   const { depositMoney, withdrawMoney, addUser } = bindActionCreators(actionCreators, dispatch);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
-    addUser(state.users.length, e.target[0].value)
+    addUser(state.users.length, e.target.value)
   }
 
   const directory = state.users.map(user => {
@@ -30,10 +30,10 @@ function App() {
       <button onClick={() => withdrawMoney(1000)}>Withdraw</button>
 
       <h1>{directory}</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='name' />
-        <button type="submit">submit</button>
-      </form>
+
+      <input type="text" placeholder='name' onChange={handleChange} />
+      <button type="submit">submit</button>
+
     </div>
   );
 }
